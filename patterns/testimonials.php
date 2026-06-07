@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Testimonials
- * Slug: agramlabs-starter/testimonials
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/testimonials
+ * Categories: agramlabs-sections
  *
  * @package Agramlabs_Starter
  */

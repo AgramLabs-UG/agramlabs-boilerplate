@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: FAQ section
- * Slug: agramlabs-starter/faq
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/faq
+ * Categories: agramlabs-sections
  *
  * @package Agramlabs_Starter
  */

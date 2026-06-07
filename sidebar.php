@@ -5,10 +5,10 @@
  * @package Agramlabs_Starter
  */
 
-if ( 'none' === agramlabs_starter_get_sidebar_layout() ) {
+if ( 'none' === agramlabs_get_sidebar_layout() ) {
 	return;
 }
 ?>
-<aside class="sidebar" aria-label="<?php esc_attr_e( 'Sidebar', 'agramlabs-starter' ); ?>">
+<aside class="sidebar" aria-label="<?php esc_attr_e( 'Sidebar', 'agramlabs' ); ?>">
 	<?php dynamic_sidebar( 'primary-sidebar' ); ?>
 </aside>

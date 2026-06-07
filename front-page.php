@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<?php agramlabs_starter_before_main(); ?>
+<?php agramlabs_before_main(); ?>
 <main id="main" class="site-main" role="main">
 	<div class="site-content alignwide">
 		<?php
@@ -18,6 +18,6 @@ get_header();
 		?>
 	</div>
 </main>
-<?php agramlabs_starter_after_main(); ?>
+<?php agramlabs_after_main(); ?>
 <?php
 get_footer();

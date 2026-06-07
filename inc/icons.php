@@ -9,13 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'agramlabs_starter_icons' ) ) :
+if ( ! function_exists( 'agramlabs_icons' ) ) :
 	/**
 	 * Return available theme icons.
 	 *
 	 * @return array<string,string>
 	 */
-	function agramlabs_starter_icons(): array {
+	function agramlabs_icons(): array {
 		return array(
 			'arrow-right' => '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
 			'check'       => '<path d="m5 12 5 5L20 7"/>',
@@ -31,15 +31,15 @@ if ( ! function_exists( 'agramlabs_starter_icons' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_get_icon' ) ) :
+if ( ! function_exists( 'agramlabs_get_icon' ) ) :
 	/**
 	 * Return a local SVG icon.
 	 *
 	 * @param string $name Icon name.
 	 * @param array  $args Icon args.
 	 */
-	function agramlabs_starter_get_icon( string $name, array $args = array() ): string {
-		$icons = agramlabs_starter_icons();
+	function agramlabs_get_icon( string $name, array $args = array() ): string {
+		$icons = agramlabs_icons();
 
 		if ( ! isset( $icons[ $name ] ) ) {
 			return '';
@@ -85,14 +85,14 @@ if ( ! function_exists( 'agramlabs_starter_get_icon' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_icon' ) ) :
+if ( ! function_exists( 'agramlabs_icon' ) ) :
 	/**
 	 * Print a local SVG icon.
 	 *
 	 * @param string $name Icon name.
 	 * @param array  $args Icon args.
 	 */
-	function agramlabs_starter_icon( string $name, array $args = array() ): void {
-		echo agramlabs_starter_get_icon( $name, $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	function agramlabs_icon( string $name, array $args = array() ): void {
+		echo agramlabs_get_icon( $name, $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;

@@ -1,6 +1,6 @@
-# Agramlabs Starter
+# Agramlabs Boilerplate
 
-Agramlabs Starter is a Gutenberg-first WordPress starter theme with a Bootstrap-compatible grid, SCSS architecture, ES module JavaScript without jQuery, Swiper slider support, local SVG icons, SEO preparation, WooCommerce preparation, BEM naming, optimized compiled assets, and a strict no-`!important` rule.
+Agramlabs Boilerplate is a Gutenberg-first WordPress starter theme with a Bootstrap-compatible grid, SCSS architecture, ES module JavaScript without jQuery, Swiper slider support, local SVG icons, SEO preparation, WooCommerce preparation, BEM naming, optimized compiled assets, and a strict no-`!important` rule.
 
 The theme is block-first. `theme.json`, block templates, template parts, and patterns are the primary rendering model. Classic PHP templates can be added as fallbacks when needed.
 
@@ -13,8 +13,8 @@ The theme is block-first. `theme.json`, block templates, template parts, and pat
 
 ## Installation
 
-1. Place `agramlabs-starter` in `wp-content/themes`.
-2. Activate **Agramlabs Starter** in WordPress admin.
+1. Place `agramlabs` in `wp-content/themes`.
+2. Activate **Agramlabs Boilerplate** in WordPress admin.
 3. Install dependencies when developing assets:
 
 ```bash
@@ -49,7 +49,7 @@ Command purpose:
 - JavaScript modules bundled through Vite with no jQuery dependency.
 - Swiper support for sliders and carousels.
 - Appear-animation hook for elements with `data-animate`.
-- Local SVG icon helper through `agramlabs_starter_get_icon()`.
+- Local SVG icon helper through `agramlabs_get_icon()`.
 - SEO fallback metadata that avoids common SEO plugin duplication.
 - WooCommerce support, gallery support, wrappers, and fallback template.
 - Plugin-aware JSON-LD schema foundation.
@@ -113,10 +113,10 @@ Use `data-animate-delay="0.15"` for staggered timing. Appear animations use nati
 Render a registered local SVG icon in PHP:
 
 ```php
-echo agramlabs_starter_get_icon( 'arrow-right', array( 'label' => 'Continue' ) );
+echo agramlabs_get_icon( 'arrow-right', array( 'label' => 'Continue' ) );
 ```
 
-Use `agramlabs_starter_icon()` when direct output is appropriate.
+Use `agramlabs_icon()` when direct output is appropriate.
 
 ## SEO and WooCommerce
 

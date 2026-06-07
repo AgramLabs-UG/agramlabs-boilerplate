@@ -24,11 +24,11 @@ require_once get_theme_file_path( 'inc/svg.php' );
 require_once get_theme_file_path( 'inc/woocommerce.php' );
 require_once get_theme_file_path( 'inc/performance.php' );
 
-if ( ! function_exists( 'agramlabs_starter_setup' ) ) :
+if ( ! function_exists( 'agramlabs_setup' ) ) :
 	/**
 	 * Register core theme support.
 	 */
-	function agramlabs_starter_setup(): void {
+	function agramlabs_setup(): void {
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'editor-styles' );
 		add_theme_support( 'responsive-embeds' );
@@ -41,33 +41,33 @@ if ( ! function_exists( 'agramlabs_starter_setup' ) ) :
 		add_editor_style( 'assets/css/editor.css' );
 	}
 endif;
-add_action( 'after_setup_theme', 'agramlabs_starter_setup' );
+add_action( 'after_setup_theme', 'agramlabs_setup' );
 
-if ( ! function_exists( 'agramlabs_starter_body_classes' ) ) :
+if ( ! function_exists( 'agramlabs_body_classes' ) ) :
 	/**
 	 * Add theme state classes.
 	 *
 	 * @param array<int,string> $classes Body classes.
 	 * @return array<int,string>
 	 */
-	function agramlabs_starter_body_classes( array $classes ): array {
-		$classes[] = 'theme-agramlabs-starter';
-		$classes[] = 'has-appear-' . sanitize_html_class( agramlabs_starter_get_theme_option( 'appear_animation', 'fade-up' ) );
+	function agramlabs_body_classes( array $classes ): array {
+		$classes[] = 'theme-agramlabs';
+		$classes[] = 'has-appear-' . sanitize_html_class( agramlabs_get_theme_option( 'appear_animation', 'fade-up' ) );
 
-		if ( agramlabs_starter_get_theme_option( 'drawer_desktop_enabled', false ) ) {
+		if ( agramlabs_get_theme_option( 'drawer_desktop_enabled', false ) ) {
 			$classes[] = 'has-desktop-drawer';
 		}
 
 		return $classes;
 	}
 endif;
-add_filter( 'body_class', 'agramlabs_starter_body_classes' );
+add_filter( 'body_class', 'agramlabs_body_classes' );
 
-if ( ! function_exists( 'agramlabs_starter_asset_version' ) ) :
+if ( ! function_exists( 'agramlabs_asset_version' ) ) :
 	/**
 	 * Return filemtime-based versions in development and theme version as fallback.
 	 */
-	function agramlabs_starter_asset_version( string $relative_path ): string {
+	function agramlabs_asset_version( string $relative_path ): string {
 		$path = get_theme_file_path( $relative_path );
 
 		if ( file_exists( $path ) ) {
@@ -78,54 +78,54 @@ if ( ! function_exists( 'agramlabs_starter_asset_version' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_enqueue_assets' ) ) :
+if ( ! function_exists( 'agramlabs_enqueue_assets' ) ) :
 	/**
 	 * Enqueue frontend assets.
 	 */
-	function agramlabs_starter_enqueue_assets(): void {
+	function agramlabs_enqueue_assets(): void {
 		wp_enqueue_style(
-			'agramlabs-starter-main',
+			'agramlabs-main',
 			get_theme_file_uri( 'assets/css/main.css' ),
 			array(),
-			agramlabs_starter_asset_version( 'assets/css/main.css' )
+			agramlabs_asset_version( 'assets/css/main.css' )
 		);
 
 		wp_enqueue_script(
-			'agramlabs-starter-main',
+			'agramlabs-main',
 			get_theme_file_uri( 'assets/js/main.js' ),
 			array(),
-			agramlabs_starter_asset_version( 'assets/js/main.js' ),
+			agramlabs_asset_version( 'assets/js/main.js' ),
 			array( 'strategy' => 'defer', 'in_footer' => true )
 		);
 	}
 endif;
-add_action( 'wp_enqueue_scripts', 'agramlabs_starter_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'agramlabs_enqueue_assets' );
 
-if ( ! function_exists( 'agramlabs_starter_enqueue_editor_assets' ) ) :
+if ( ! function_exists( 'agramlabs_enqueue_editor_assets' ) ) :
 	/**
 	 * Enqueue block editor assets.
 	 */
-	function agramlabs_starter_enqueue_editor_assets(): void {
+	function agramlabs_enqueue_editor_assets(): void {
 		wp_enqueue_style(
-			'agramlabs-starter-editor',
+			'agramlabs-editor',
 			get_theme_file_uri( 'assets/css/editor.css' ),
 			array(),
-			agramlabs_starter_asset_version( 'assets/css/editor.css' )
+			agramlabs_asset_version( 'assets/css/editor.css' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'agramlabs_starter_enqueue_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'agramlabs_enqueue_editor_assets' );
 
-if ( ! function_exists( 'agramlabs_starter_register_block_styles' ) ) :
+if ( ! function_exists( 'agramlabs_register_block_styles' ) ) :
 	/**
 	 * Register starter block style variants.
 	 */
-	function agramlabs_starter_register_block_styles(): void {
+	function agramlabs_register_block_styles(): void {
 		register_block_style(
 			'core/group',
 			array(
 				'name'  => 'section',
-				'label' => __( 'Section', 'agramlabs-starter' ),
+				'label' => __( 'Section', 'agramlabs' ),
 			)
 		);
 
@@ -133,7 +133,7 @@ if ( ! function_exists( 'agramlabs_starter_register_block_styles' ) ) :
 			'core/buttons',
 			array(
 				'name'  => 'stacked-mobile',
-				'label' => __( 'Stacked on mobile', 'agramlabs-starter' ),
+				'label' => __( 'Stacked on mobile', 'agramlabs' ),
 			)
 		);
 
@@ -141,22 +141,22 @@ if ( ! function_exists( 'agramlabs_starter_register_block_styles' ) ) :
 			'core/list',
 			array(
 				'name'  => 'check-list',
-				'label' => __( 'Check list', 'agramlabs-starter' ),
+				'label' => __( 'Check list', 'agramlabs' ),
 			)
 		);
 	}
 endif;
-add_action( 'init', 'agramlabs_starter_register_block_styles' );
+add_action( 'init', 'agramlabs_register_block_styles' );
 
-if ( ! function_exists( 'agramlabs_starter_register_pattern_categories' ) ) :
+if ( ! function_exists( 'agramlabs_register_pattern_categories' ) ) :
 	/**
 	 * Register starter pattern categories.
 	 */
-	function agramlabs_starter_register_pattern_categories(): void {
+	function agramlabs_register_pattern_categories(): void {
 		register_block_pattern_category(
-			'agramlabs-starter-sections',
-			array( 'label' => __( 'Agramlabs Sections', 'agramlabs-starter' ) )
+			'agramlabs-sections',
+			array( 'label' => __( 'Agramlabs Sections', 'agramlabs' ) )
 		);
 	}
 endif;
-add_action( 'init', 'agramlabs_starter_register_pattern_categories' );
+add_action( 'init', 'agramlabs_register_pattern_categories' );

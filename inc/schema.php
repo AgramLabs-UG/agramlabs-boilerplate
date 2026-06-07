@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'agramlabs_starter_schema_image' ) ) :
+if ( ! function_exists( 'agramlabs_schema_image' ) ) :
 	/**
 	 * Return an image URL for schema.
 	 */
-	function agramlabs_starter_schema_image(): string {
+	function agramlabs_schema_image(): string {
 		if ( is_singular() && has_post_thumbnail() ) {
 			return (string) get_the_post_thumbnail_url( null, 'full' );
 		}
@@ -28,13 +28,13 @@ if ( ! function_exists( 'agramlabs_starter_schema_image' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_schema_graph' ) ) :
+if ( ! function_exists( 'agramlabs_schema_graph' ) ) :
 	/**
 	 * Build a minimal schema graph.
 	 *
 	 * @return array<string,mixed>
 	 */
-	function agramlabs_starter_schema_graph(): array {
+	function agramlabs_schema_graph(): array {
 		$site_url = home_url( '/' );
 		$graph    = array(
 			array(
@@ -52,7 +52,7 @@ if ( ! function_exists( 'agramlabs_starter_schema_graph' ) ) :
 			),
 		);
 
-		$image = agramlabs_starter_schema_image();
+		$image = agramlabs_schema_image();
 
 		if ( $image ) {
 			$graph[0]['logo'] = array(
@@ -98,19 +98,19 @@ if ( ! function_exists( 'agramlabs_starter_schema_graph' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_output_schema' ) ) :
+if ( ! function_exists( 'agramlabs_output_schema' ) ) :
 	/**
 	 * Output schema if no SEO plugin owns it.
 	 */
-	function agramlabs_starter_output_schema(): void {
-		if ( is_admin() || agramlabs_starter_has_seo_plugin() ) {
+	function agramlabs_output_schema(): void {
+		if ( is_admin() || agramlabs_has_seo_plugin() ) {
 			return;
 		}
 
 		printf(
 			'<script type="application/ld+json">%s</script>' . "\n",
-			wp_json_encode( agramlabs_starter_schema_graph(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE )
+			wp_json_encode( agramlabs_schema_graph(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE )
 		);
 	}
 endif;
-add_action( 'wp_head', 'agramlabs_starter_output_schema', 20 );
+add_action( 'wp_head', 'agramlabs_output_schema', 20 );

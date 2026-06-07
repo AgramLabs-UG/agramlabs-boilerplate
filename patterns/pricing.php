@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Pricing cards
- * Slug: agramlabs-starter/pricing
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/pricing
+ * Categories: agramlabs-sections
  *
  * @package Agramlabs_Starter
  */

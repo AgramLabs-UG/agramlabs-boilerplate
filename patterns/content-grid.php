@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Three column content grid
- * Slug: agramlabs-starter/content-grid
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/content-grid
+ * Categories: agramlabs-sections
  *
  * @package Agramlabs_Starter
  */

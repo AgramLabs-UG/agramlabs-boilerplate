@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: CTA band
- * Slug: agramlabs-starter/cta-band
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/cta-band
+ * Categories: agramlabs-sections
  *
  * @package Agramlabs_Starter
  */

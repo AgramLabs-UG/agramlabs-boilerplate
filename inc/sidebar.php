@@ -9,13 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'agramlabs_starter_register_sidebars' ) ) :
-	function agramlabs_starter_register_sidebars(): void {
+if ( ! function_exists( 'agramlabs_register_sidebars' ) ) :
+	function agramlabs_register_sidebars(): void {
 		register_sidebar(
 			array(
-				'name'          => __( 'Primary Sidebar', 'agramlabs-starter' ),
+				'name'          => __( 'Primary Sidebar', 'agramlabs' ),
 				'id'            => 'primary-sidebar',
-				'description'   => __( 'Optional sidebar for classic fallback templates.', 'agramlabs-starter' ),
+				'description'   => __( 'Optional sidebar for classic fallback templates.', 'agramlabs' ),
 				'before_widget' => '<section id="%1$s" class="sidebar__widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="sidebar__title">',
@@ -24,11 +24,11 @@ if ( ! function_exists( 'agramlabs_starter_register_sidebars' ) ) :
 		);
 	}
 endif;
-add_action( 'widgets_init', 'agramlabs_starter_register_sidebars' );
+add_action( 'widgets_init', 'agramlabs_register_sidebars' );
 
-if ( ! function_exists( 'agramlabs_starter_get_sidebar_layout' ) ) :
-	function agramlabs_starter_get_sidebar_layout(): string {
-		$layout = (string) agramlabs_starter_get_theme_option( 'default_sidebar_layout', 'right' );
+if ( ! function_exists( 'agramlabs_get_sidebar_layout' ) ) :
+	function agramlabs_get_sidebar_layout(): string {
+		$layout = (string) agramlabs_get_theme_option( 'default_sidebar_layout', 'right' );
 
 		if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
 			return 'none';

@@ -9,14 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'agramlabs_starter_get_svg' ) ) :
+if ( ! function_exists( 'agramlabs_get_svg' ) ) :
 	/**
 	 * Return sanitized inline SVG from the theme assets/svg directory.
 	 *
 	 * @param string $name SVG filename without extension.
 	 * @param string $class Optional class.
 	 */
-	function agramlabs_starter_get_svg( string $name, string $class = '' ): string {
+	function agramlabs_get_svg( string $name, string $class = '' ): string {
 		$name = sanitize_file_name( $name );
 		$path = get_theme_file_path( 'assets/svg/' . $name . '.svg' );
 
@@ -64,14 +64,14 @@ if ( ! function_exists( 'agramlabs_starter_get_svg' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_svg' ) ) :
+if ( ! function_exists( 'agramlabs_svg' ) ) :
 	/**
 	 * Print a local SVG file.
 	 *
 	 * @param string $name SVG filename without extension.
 	 * @param string $class Optional class.
 	 */
-	function agramlabs_starter_svg( string $name, string $class = '' ): void {
-		echo agramlabs_starter_get_svg( $name, $class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	function agramlabs_svg( string $name, string $class = '' ): void {
+		echo agramlabs_get_svg( $name, $class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;

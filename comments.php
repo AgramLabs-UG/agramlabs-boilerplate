@@ -11,7 +11,7 @@ if ( post_password_required() ) {
 ?>
 <section class="comments" id="comments">
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments__title"><?php esc_html_e( 'Comments', 'agramlabs-starter' ); ?></h2>
+		<h2 class="comments__title"><?php esc_html_e( 'Comments', 'agramlabs' ); ?></h2>
 		<ol class="comments__list">
 			<?php wp_list_comments( array( 'style' => 'ol', 'short_ping' => true ) ); ?>
 		</ol>

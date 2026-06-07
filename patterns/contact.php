@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Contact section
- * Slug: agramlabs-starter/contact
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/contact
+ * Categories: agramlabs-sections
  *
  * @package Agramlabs_Starter
  */

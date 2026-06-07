@@ -9,21 +9,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'agramlabs_starter_register_menus' ) ) :
-	function agramlabs_starter_register_menus(): void {
+if ( ! function_exists( 'agramlabs_register_menus' ) ) :
+	function agramlabs_register_menus(): void {
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary menu', 'agramlabs-starter' ),
-				'footer'  => __( 'Footer menu', 'agramlabs-starter' ),
-				'drawer'  => __( 'Drawer menu', 'agramlabs-starter' ),
+				'primary' => __( 'Primary menu', 'agramlabs' ),
+				'footer'  => __( 'Footer menu', 'agramlabs' ),
+				'drawer'  => __( 'Drawer menu', 'agramlabs' ),
 			)
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'agramlabs_starter_register_menus' );
+add_action( 'after_setup_theme', 'agramlabs_register_menus' );
 
-if ( ! function_exists( 'agramlabs_starter_render_menu' ) ) :
-	function agramlabs_starter_render_menu( string $location, array $args = array() ): void {
+if ( ! function_exists( 'agramlabs_render_menu' ) ) :
+	function agramlabs_render_menu( string $location, array $args = array() ): void {
 		$defaults = array(
 			'container'      => 'nav',
 			'container_class'=> 'menu menu--' . sanitize_html_class( $location ),
@@ -44,7 +44,7 @@ if ( ! function_exists( 'agramlabs_starter_render_menu' ) ) :
 				esc_attr( $defaults['container_class'] ),
 				esc_attr( $location ),
 				esc_url( admin_url( 'nav-menus.php' ) ),
-				esc_html__( 'Assign menu', 'agramlabs-starter' )
+				esc_html__( 'Assign menu', 'agramlabs' )
 			);
 		}
 	}

@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'agramlabs_starter_has_seo_plugin' ) ) :
+if ( ! function_exists( 'agramlabs_has_seo_plugin' ) ) :
 	/**
 	 * Detect common SEO plugins to avoid duplicate theme metadata.
 	 */
-	function agramlabs_starter_has_seo_plugin(): bool {
+	function agramlabs_has_seo_plugin(): bool {
 		return defined( 'WPSEO_VERSION' )
 			|| defined( 'RANK_MATH_VERSION' )
 			|| defined( 'AIOSEO_VERSION' )
@@ -21,22 +21,22 @@ if ( ! function_exists( 'agramlabs_starter_has_seo_plugin' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'agramlabs_starter_document_title_separator' ) ) :
+if ( ! function_exists( 'agramlabs_document_title_separator' ) ) :
 	/**
 	 * Keep document titles concise.
 	 */
-	function agramlabs_starter_document_title_separator(): string {
+	function agramlabs_document_title_separator(): string {
 		return '|';
 	}
 endif;
-add_filter( 'document_title_separator', 'agramlabs_starter_document_title_separator' );
+add_filter( 'document_title_separator', 'agramlabs_document_title_separator' );
 
-if ( ! function_exists( 'agramlabs_starter_meta_description' ) ) :
+if ( ! function_exists( 'agramlabs_meta_description' ) ) :
 	/**
 	 * Output a conservative meta description when no SEO plugin is active.
 	 */
-	function agramlabs_starter_meta_description(): void {
-		if ( agramlabs_starter_has_seo_plugin() || is_admin() ) {
+	function agramlabs_meta_description(): void {
+		if ( agramlabs_has_seo_plugin() || is_admin() ) {
 			return;
 		}
 
@@ -57,19 +57,19 @@ if ( ! function_exists( 'agramlabs_starter_meta_description' ) ) :
 		printf( '<meta name="description" content="%s">' . "\n", esc_attr( $description ) );
 	}
 endif;
-add_action( 'wp_head', 'agramlabs_starter_meta_description', 5 );
+add_action( 'wp_head', 'agramlabs_meta_description', 5 );
 
-if ( ! function_exists( 'agramlabs_starter_robots' ) ) :
+if ( ! function_exists( 'agramlabs_robots' ) ) :
 	/**
 	 * Allow large previews in search results.
 	 *
 	 * @param array<string,bool|string> $robots Robots directives.
 	 * @return array<string,bool|string>
 	 */
-	function agramlabs_starter_robots( array $robots ): array {
+	function agramlabs_robots( array $robots ): array {
 		$robots['max-image-preview'] = 'large';
 
 		return $robots;
 	}
 endif;
-add_filter( 'wp_robots', 'agramlabs_starter_robots' );
+add_filter( 'wp_robots', 'agramlabs_robots' );

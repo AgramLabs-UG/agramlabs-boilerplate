@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Hero with Bootstrap grid
- * Slug: agramlabs-starter/hero-grid
- * Categories: agramlabs-starter-sections
+ * Slug: agramlabs/hero-grid
+ * Categories: agramlabs-sections
  * Viewport width: 1200
  *
  * @package Agramlabs_Starter

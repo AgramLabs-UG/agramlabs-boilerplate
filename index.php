@@ -7,9 +7,9 @@
 
 get_header();
 
-$sidebar_layout = agramlabs_starter_get_sidebar_layout();
+$sidebar_layout = agramlabs_get_sidebar_layout();
 ?>
-<?php agramlabs_starter_before_main(); ?>
+<?php agramlabs_before_main(); ?>
 <main id="main" class="site-main" role="main">
 	<div class="site-layout site-layout--<?php echo esc_attr( $sidebar_layout ); ?> alignwide">
 		<div class="site-content">
@@ -24,12 +24,12 @@ $sidebar_layout = agramlabs_starter_get_sidebar_layout();
 				<?php endwhile; ?>
 				<?php the_posts_pagination(); ?>
 			<?php else : ?>
-				<p><?php esc_html_e( 'No posts found.', 'agramlabs-starter' ); ?></p>
+				<p><?php esc_html_e( 'No posts found.', 'agramlabs' ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php get_sidebar(); ?>
 	</div>
 </main>
-<?php agramlabs_starter_after_main(); ?>
+<?php agramlabs_after_main(); ?>
 <?php
 get_footer();

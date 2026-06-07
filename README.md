@@ -73,11 +73,8 @@ Command purpose:
 - `templates/`: Block templates.
 - `parts/`: Block template parts.
 - `patterns/`: Gutenberg block patterns.
-- `docs/`: Rules, architecture, and task tracking.
 - `theme.json`: Design tokens and block defaults.
 - `woocommerce.php`: WooCommerce fallback template.
-
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for extension rules.
 
 ## Slider Usage
 
@@ -127,16 +124,7 @@ SEO preparation is intentionally conservative. The theme outputs fallback metada
 
 WooCommerce preparation is active only when WooCommerce is installed. The theme registers WooCommerce support, gallery features, and content wrappers.
 
-## Planned Next Work
-
-The following are planned and tracked in [docs/TASKS.md](docs/TASKS.md):
-
-- Initialize the clean firm GitHub repository.
-- Add accessibility audit automation later if browser-level checks are needed.
-
 ## Engineering Rules
-
-Project rules live in [docs/RULES.md](docs/RULES.md). The short version:
 
 - Semantic HTML5.
 - BEM for project classes.

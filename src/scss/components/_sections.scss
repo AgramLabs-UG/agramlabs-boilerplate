@@ -1,0 +1,98 @@
+.boiler-section {
+	padding-block: var(--ags-space-xl);
+	background: var(--ags-color-base);
+}
+
+.boiler-section--split,
+.boiler-section--stats {
+	background: var(--ags-color-surface);
+}
+
+.boiler-section__header {
+	max-width: 44rem;
+	margin-block-end: var(--ags-space-lg);
+}
+
+.boiler-eyebrow {
+	margin-block: 0 0.75rem;
+	color: var(--ags-color-primary-hover);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.boiler-lead {
+	color: var(--ags-color-muted);
+	font-size: 1.125rem;
+	line-height: 1.7;
+}
+
+.boiler-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	margin-block-start: 1.5rem;
+}
+
+.boiler-link {
+	color: var(--ags-color-contrast);
+	font-weight: 700;
+	text-decoration-color: var(--ags-color-primary);
+	text-underline-offset: 0.25em;
+}
+
+.boiler-media-placeholder {
+	min-height: clamp(18rem, 36vw, 28rem);
+	border: 1px solid rgb(17 24 39 / 8%);
+	border-radius: var(--ags-radius-lg);
+	background:
+		linear-gradient(135deg, rgb(31 198 157 / 85%), rgb(21 94 239 / 75%)),
+		radial-gradient(circle at 25% 20%, rgb(255 255 255 / 60%), transparent 28%);
+	box-shadow: var(--ags-shadow-soft);
+}
+
+.boiler-logo-strip {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+	gap: 1rem;
+	align-items: center;
+	margin-block-start: 1.25rem;
+}
+
+.boiler-logo-strip__item {
+	display: grid;
+	min-height: 4.5rem;
+	place-items: center;
+	border: 1px solid var(--ags-color-border);
+	border-radius: var(--ags-radius-md);
+	background: var(--ags-color-base);
+	color: var(--ags-color-muted);
+	font-weight: 800;
+}
+
+.boiler-stat {
+	height: 100%;
+	padding: var(--ags-space-md);
+	border: 1px solid var(--ags-color-border);
+	border-radius: var(--ags-radius-md);
+	background: var(--ags-color-base);
+}
+
+.boiler-stat__value,
+.boiler-stat__label {
+	display: block;
+}
+
+.boiler-stat__value {
+	color: var(--ags-color-primary-hover);
+	font-size: clamp(2.5rem, 6vw, 4.5rem);
+	line-height: 1;
+}
+
+.boiler-stat__label {
+	margin-block-start: 0.75rem;
+	color: var(--ags-color-muted);
+	font-weight: 700;
+}

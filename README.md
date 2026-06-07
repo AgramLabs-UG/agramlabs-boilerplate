@@ -54,7 +54,8 @@ Command purpose:
 - WooCommerce support, gallery support, wrappers, and fallback template.
 - Plugin-aware JSON-LD schema foundation.
 - Local SVG file injector for `assets/svg`.
-- Starter block patterns for CTA, FAQ, testimonials, pricing, and contact.
+- Starter block patterns for hero, CTA, image/text, logo strip, stats, FAQ, testimonials, pricing, and contact.
+- Editable custom blocks for FAQ accordion, Swiper slider, testimonials, card grid, and contact/form sections.
 - Performance helpers for stylesheet preload and image loading attributes.
 - Customizer settings for branding, footer, marketing snippets, drawer behavior, animations, sidebar layout, and Gutenberg cleanup.
 - Header, footer, and drawer menu locations.
@@ -63,6 +64,7 @@ Command purpose:
 - Optimized compiled CSS and JS assets.
 - No jQuery in theme code.
 - No `!important` in theme source or compiled theme files.
+- Boilerplate accent color: `#1fc69d`.
 
 ## Folder Overview
 

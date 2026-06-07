@@ -1,5 +1,8 @@
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
+
+const themeDir = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
 	build: {
@@ -8,7 +11,8 @@ export default defineConfig({
 		outDir: 'assets',
 		rollupOptions: {
 			input: {
-				main: resolve(__dirname, 'src/js/main.js')
+				main: resolve(themeDir, 'src/js/main.js'),
+				'editor-blocks': resolve(themeDir, 'src/js/editor-blocks.js')
 			},
 			output: {
 				entryFileNames: 'js/[name].js'

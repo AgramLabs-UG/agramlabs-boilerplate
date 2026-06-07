@@ -1,0 +1,50 @@
+input,
+select,
+textarea {
+	width: 100%;
+	min-height: 2.75rem;
+	border: 1px solid var(--ags-color-border);
+	border-radius: var(--ags-radius-sm);
+	padding: 0.625rem 0.875rem;
+	background: var(--ags-color-base);
+	color: var(--ags-color-contrast);
+}
+
+textarea {
+	min-height: 8rem;
+	resize: vertical;
+}
+
+label {
+	display: inline-block;
+	margin-block-end: 0.375rem;
+	font-weight: 700;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 2px solid var(--ags-color-primary);
+	outline-offset: 2px;
+}
+
+.form-row,
+.comment-form p,
+.woocommerce form .form-row {
+	margin-block: 0 1rem;
+}
+
+.required,
+.woocommerce-invalid label {
+	color: #b42318;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message,
+.form-message {
+	padding: 1rem;
+	border: 1px solid var(--ags-color-border);
+	border-radius: var(--ags-radius-sm);
+	background: var(--ags-color-surface);
+}

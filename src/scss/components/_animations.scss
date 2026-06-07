@@ -1,0 +1,33 @@
+.has-js [data-animate] {
+	opacity: 0;
+	transition: opacity 520ms ease, transform 520ms ease;
+	transition-delay: var(--ags-appear-delay, 0s);
+}
+
+.has-js.has-appear-fade [data-animate],
+.has-js .has-appear-fade [data-animate] {
+	transform: none;
+}
+
+.has-js.has-appear-fade-up [data-animate],
+.has-js .has-appear-fade-up [data-animate] {
+	transform: translateY(1.125rem);
+}
+
+.has-js.has-appear-scale [data-animate],
+.has-js .has-appear-scale [data-animate] {
+	transform: scale(0.97);
+}
+
+.has-js [data-animate][data-animate-ready="true"] {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.has-js [data-animate] {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}

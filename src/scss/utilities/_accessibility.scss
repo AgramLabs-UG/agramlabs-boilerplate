@@ -1,0 +1,16 @@
+.skip-link {
+	position: absolute;
+	z-index: 1000;
+	top: 0.75rem;
+	left: 0.75rem;
+	transform: translateY(-150%);
+	padding: 0.625rem 0.875rem;
+	border-radius: var(--ags-radius-sm);
+	background: var(--ags-color-contrast);
+	color: var(--ags-color-base);
+	transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}

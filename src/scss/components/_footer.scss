@@ -1,0 +1,19 @@
+.site-footer {
+	border-top: 1px solid var(--ags-color-border);
+	background: var(--ags-color-surface);
+}
+
+.site-footer__inner {
+	gap: var(--ags-space-sm);
+	padding-block: var(--ags-space-md);
+}
+
+.site-footer__credit {
+	margin: 0;
+	color: var(--ags-color-muted);
+	font-size: 0.875rem;
+}
+
+.site-footer__nav {
+	font-size: 0.875rem;
+}

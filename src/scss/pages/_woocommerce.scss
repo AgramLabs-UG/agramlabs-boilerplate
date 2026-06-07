@@ -1,0 +1,20 @@
+.site-main--commerce {
+	padding-block: var(--ags-space-lg);
+}
+
+.woocommerce-layout {
+	width: min(100%, var(--wp--style--global--wide-size));
+	margin-inline: auto;
+}
+
+.woocommerce :where(.products) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: var(--ags-space-md);
+	padding: 0;
+	list-style: none;
+}
+
+.woocommerce :where(.product) {
+	min-width: 0;
+}

@@ -1,0 +1,11 @@
+.icon {
+	display: inline-block;
+	flex: 0 0 auto;
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+}
+
+.icon[aria-hidden="true"] {
+	pointer-events: none;
+}

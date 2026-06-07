@@ -1,0 +1,33 @@
+.is-style-section {
+	padding-block: var(--ags-space-lg);
+}
+
+.is-style-check-list {
+	padding-inline-start: 1.25rem;
+}
+
+.is-style-check-list li {
+	margin-block-start: 0.5rem;
+}
+
+.wp-block-search__inside-wrapper {
+	gap: 0.5rem;
+}
+
+.wp-block-search__input {
+	min-height: 2.75rem;
+	border: 1px solid var(--ags-color-border);
+	border-radius: var(--ags-radius-sm);
+	padding: 0.625rem 0.875rem;
+}
+
+.wp-block-post-terms,
+.wp-block-post-date {
+	color: var(--ags-color-muted);
+	font-size: 0.875rem;
+}
+
+.alignfull {
+	margin-right: calc(var(--wp--style--root--padding-right) * -1);
+	margin-left: calc(var(--wp--style--root--padding-left) * -1);
+}

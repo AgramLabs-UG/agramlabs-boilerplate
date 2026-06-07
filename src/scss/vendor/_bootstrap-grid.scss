@@ -1,0 +1,127 @@
+@use "sass:map";
+
+$grid-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+$container-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1320px
+);
+$grid-gutters: (
+	0: 0,
+	1: 0.25rem,
+	2: 0.5rem,
+	3: 1rem,
+	4: 1.5rem,
+	5: 3rem
+);
+
+@mixin make-columns($infix: "") {
+	.col#{$infix} {
+		flex: 1 0 0%;
+	}
+
+	.col#{$infix}-auto {
+		flex: 0 0 auto;
+		width: auto;
+	}
+
+	@for $index from 1 through 12 {
+		.col#{$infix}-#{$index} {
+			flex: 0 0 auto;
+			width: calc($index / 12 * 100%);
+		}
+	}
+
+	@for $index from 0 through 11 {
+		.offset#{$infix}-#{$index} {
+			margin-left: calc($index / 12 * 100%);
+		}
+	}
+}
+
+.container,
+.container-fluid {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+	padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+}
+
+@each $breakpoint, $width in $container-widths {
+	$breakpoint-width: map.get($grid-breakpoints, $breakpoint);
+
+	@media (width >= $breakpoint-width) {
+		.container {
+			max-width: $width;
+		}
+	}
+}
+
+.row {
+	--bs-gutter-x: 1.5rem;
+	--bs-gutter-y: 0;
+
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: calc(var(--bs-gutter-y) * -1);
+	margin-right: calc(var(--bs-gutter-x) * -0.5);
+	margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.row > * {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+	margin-top: var(--bs-gutter-y);
+	padding-right: calc(var(--bs-gutter-x) * 0.5);
+	padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+@include make-columns;
+
+@each $breakpoint, $width in $grid-breakpoints {
+	@media (width >= $width) {
+		@include make-columns("-#{$breakpoint}");
+	}
+}
+
+@each $index, $size in $grid-gutters {
+	.g-#{$index},
+	.gx-#{$index} {
+		--bs-gutter-x: #{$size};
+	}
+
+	.g-#{$index},
+	.gy-#{$index} {
+		--bs-gutter-y: #{$size};
+	}
+}
+
+.g-4,
+.gx-4 {
+	--bs-gutter-x: 1.5rem;
+}
+
+.g-4,
+.gy-4 {
+	--bs-gutter-y: 1.5rem;
+}
+
+.px-0 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.align-items-center {
+	align-items: center;
+}

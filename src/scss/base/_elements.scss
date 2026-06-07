@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--ags-color-base);
+	color: var(--ags-color-contrast);
+	font-family: var(--ags-font-sans);
+}
+
+img,
+svg,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-underline-offset: 0.18em;
+}
+
+a:hover {
+	text-decoration-thickness: 0.12em;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}

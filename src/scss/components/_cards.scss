@@ -1,0 +1,26 @@
+@use "../tools/mixins";
+
+.post-card,
+.feature-card {
+	@include mixins.card-surface;
+
+	padding: var(--ags-space-md);
+}
+
+.post-card {
+	margin-block-end: var(--ags-space-sm);
+}
+
+.post-card :where(h2, h3) {
+	margin-block-start: 0;
+}
+
+.feature-card__title {
+	margin-block: 0 0.5rem;
+	font-size: 1.125rem;
+}
+
+.feature-card__text {
+	margin: 0;
+	color: var(--ags-color-muted);
+}

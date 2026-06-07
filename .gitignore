@@ -1,48 +1,63 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Dependencies
+node_modules/
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# Package manager noise
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Configuration
-wp-config.php
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+*.local
 
-# Example themes
-/wp-content/themes/twenty*/
+# Build and tool caches
+.cache/
+.parcel-cache/
+.sass-cache/
+.stylelintcache
+.eslintcache
+.vite/
+coverage/
+release/
 
-# Example plugin
-/wp-content/plugins/hello.php
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
 
-# Uploads
-/wp-content/uploads/
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Log files
-*.log
+# Editor and IDE folders
+.idea/
+.vscode/
+*.code-workspace
 
-# htaccess
-/.htaccess
+# Local-only project notes
+docs/
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
+# WordPress and Local app generated files
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup*/
+*.sql
+*.sqlite
+*.sqlite3
 
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# Keep compiled theme assets and lockfile tracked.
+!assets/
+!assets/css/
+!assets/js/
+!assets/css/*.css
+!assets/js/*.js
+!package-lock.json

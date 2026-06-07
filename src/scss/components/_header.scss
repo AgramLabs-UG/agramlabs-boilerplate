@@ -1,0 +1,30 @@
+.site-header {
+	border-bottom: 1px solid var(--ags-color-border);
+	background: var(--ags-color-base);
+}
+
+.site-header__inner {
+	gap: var(--ags-space-sm);
+	padding-block: var(--ags-space-sm);
+}
+
+.site-header__brand {
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.site-header__brand .wp-block-site-title {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 800;
+	line-height: 1.2;
+}
+
+.site-header__brand .wp-block-site-title a {
+	color: var(--ags-color-contrast);
+	text-decoration: none;
+}
+
+.site-header__nav {
+	gap: var(--ags-space-sm);
+}

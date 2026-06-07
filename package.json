@@ -1,0 +1,38 @@
+{
+	"name": "agramlabs-starter",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"description": "Gutenberg-first WordPress starter theme with Bootstrap grid, SCSS, BEM, and optimized assets.",
+	"scripts": {
+		"dev": "vite --host 127.0.0.1",
+		"build": "npm run build:css && npm run build:js",
+		"build:css": "sass --load-path=node_modules src/scss/main.scss assets/css/main.css --style=expanded --no-source-map && postcss assets/css/main.css -o assets/css/main.css && sass --load-path=node_modules src/scss/editor.scss assets/css/editor.css --style=expanded --no-source-map && postcss assets/css/editor.css -o assets/css/editor.css",
+		"build:js": "vite build",
+		"package": "npm run build && node scripts/package-theme.mjs",
+		"watch": "sass --load-path=node_modules src/scss/main.scss assets/css/main.css --watch",
+		"lint:css": "stylelint \"src/scss/**/*.scss\"",
+		"lint:js": "eslint \"src/js/**/*.js\""
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"vite": "^7.0.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.0.0",
+		"autoprefixer": "^10.4.20",
+		"cssnano": "^7.0.6",
+		"eslint": "^9.0.0",
+		"postcss": "^8.4.49",
+		"postcss-cli": "^11.0.0",
+		"sass": "^1.83.0",
+		"stylelint": "^16.0.0",
+		"stylelint-config-standard-scss": "^14.0.0",
+		"swiper": "^12.2.0"
+	},
+	"browserslist": [
+		"> 0.5%",
+		"last 2 versions",
+		"not dead"
+	]
+}

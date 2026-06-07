@@ -1,0 +1,26 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:pattern {"slug":"agramlabs-starter/hero-grid"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group site-main">
+	<!-- wp:heading {"level":2} -->
+	<h2 class="wp-block-heading">Latest writing</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"align":"wide","layout":{"type":"default"}} -->
+	<div class="wp-block-query alignwide">
+		<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+			<!-- wp:group {"className":"post-card","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group post-card">
+				<!-- wp:post-title {"isLink":true,"level":3} /-->
+				<!-- wp:post-excerpt {"moreText":"Read more"} /-->
+			</div>
+			<!-- /wp:group -->
+		<!-- /wp:post-template -->
+	</div>
+	<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
